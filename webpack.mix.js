@@ -10,6 +10,24 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.js([
+	'resources/js/app.js'
+], 'public/js/app.js')
+	.stylus('resources/stylus/app.styl', 'public/css');
+mix.autoload({
+	jquery: ['$', 'window.jQuery', 'jQuery']
+});
+mix.webpackConfig({
+	resolve: {
+		modules: [
+			'node_modules'
+		],
+		alias: {
+			jquery: 'jquery/src/jquery'
+		}
+	}
+});
+if (mix.inProduction()) {
+	mix.version();
+}
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');

@@ -7,8 +7,8 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+        {{--<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">--}}
+	    <link rel="stylesheet" href="{{mix('css/app.css')}}">
         <!-- Styles -->
         <style>
             html, body {
@@ -94,5 +94,6 @@
                 </div>
             </div>
         </div>
+    <p>ICO <i class="far fa-flushed"></i></p>
     </body>
 </html>
